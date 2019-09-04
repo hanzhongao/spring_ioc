@@ -24,6 +24,9 @@
     <!--第二种：静态工厂实例化-->
     <!--<bean id="bean2" class="com.imooc.ioc.demo2.Bean2Factory" factory-method="getInstance"/>-->
     <!--第三种：实例工厂实例化-->
-    <bean id="bean3" factory-bean="bean3Factory" factory-method="getInstance"/>
-    <bean id="bean3Factory" class="com.imooc.ioc.demo2.Bean3Factory"/>
+    <!--<bean id="bean3" factory-bean="bean3Factory" factory-method="getInstance"/>-->
+    <!--<bean id="bean3Factory" class="com.imooc.ioc.demo2.Bean3Factory"/>-->
+
+    <!--Bean的作用范围-->
+    <bean id="persion" class="com.imooc.ioc.demo3.Persion" scope="prototype"/>
 </beans>
