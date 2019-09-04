@@ -11,7 +11,7 @@
     </bean>
 
     <!--FoodService的创建权限交给了Spring-->
-    <bean id="foodService" class="com.imooc.ioc.demo2.FoodServiceImpl">
+    <bean id="foodService" class="com.imooc.ioc.demo1.FoodServiceImpl">
         <!--设置属性-->
         <property name="name" value="香蕉"></property>
         <property name="taste" value="甜甜的"></property>

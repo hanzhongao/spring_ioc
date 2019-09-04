@@ -1,4 +1,4 @@
-package com.imooc.ioc.demo2;
+package com.imooc.ioc.demo1;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
