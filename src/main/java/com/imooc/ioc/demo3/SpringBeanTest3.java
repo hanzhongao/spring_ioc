@@ -26,11 +26,14 @@ public class SpringBeanTest3 {
      */
     public void test2() {
         // 创建工厂
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml") ;
+        ClassPathXmlApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("applicationContext.xml") ;
         // 通过工厂创建类
         Man man = (Man) applicationContext.getBean("man");
 
-        ((ClassPathXmlApplicationContext) applicationContext).close();
+        man.run();
+
+       applicationContext.close();
 
     }
 }
