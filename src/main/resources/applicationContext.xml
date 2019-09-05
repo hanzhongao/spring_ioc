@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
@@ -34,8 +35,85 @@
     <!--<bean id="man" class="com.imooc.ioc.demo3.Man" init-method="setup" destroy-method="teardown">-->
         <!--<property name="name" value="张三"/>-->
     <!--</bean>-->
-    <bean class="com.imooc.ioc.demo3.MyBeanPostProcessor"/>
-    <bean id="userDao" class="com.imooc.ioc.demo3.UserDaoImpl"/>
+    <!--<bean class="com.imooc.ioc.demo3.MyBeanPostProcessor"/>-->
+    <!--<bean id="userDao" class="com.imooc.ioc.demo3.UserDaoImpl"/>-->
+
+    <!--Spring 构造方法属性注入-->
+    <!--<bean id="user" class="com.imooc.ioc.demo4.User">-->
+        <!--<constructor-arg name="name" value="张三"/>-->
+        <!--<constructor-arg name="age" value="23"/>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;setter方法属性注入&ndash;&gt;-->
+    <!--<bean id="persion" class="com.imooc.ioc.demo4.Persion">-->
+        <!--<property name="name" value="李四"/>-->
+        <!--<property name="age" value="32"/>-->
+        <!--<property name="cat" ref="cat"/>-->
+    <!--</bean>-->
+    <!--<bean id="cat" class="com.imooc.ioc.demo4.Cat">-->
+        <!--<property name="name" value="大橘"/>-->
+        <!--<property name="age" value="5"/>-->
+    <!--</bean>-->
+
+    <!--p名称空间属性注入-->
+    <!--<bean id="persion" class="com.imooc.ioc.demo4.Persion" p:name="小橘" p:age="34" p:cat-ref="cat"/>-->
+    <!--<bean id="cat" class="com.imooc.ioc.demo4.Cat" p:name="大橘" p:age="8"/>-->
+
+    <!--SpEL属性注入-->
+    <!--<bean id="category" class="com.imooc.ioc.demo4.Category">-->
+        <!--<property name="name" value="#{'服装'}"/>-->
+    <!--</bean>-->
+    <!--<bean id="productInfo" class="com.imooc.ioc.demo4.ProductInfo"/>-->
+    <!--<bean id="product" class="com.imooc.ioc.demo4.Product">-->
+        <!--<property name="name" value="一件衣服"/>-->
+        <!--<property name="price" value="#{productInfo.getPrice()}"/>-->
+        <!--<property name="category" value="#{category}"/>-->
+    <!--</bean>-->
+
+    <!--复杂类型属性注入-->
+    <bean id="collectionBean" class="com.imooc.ioc.demo5.CollectionBean">
+        <!--数组类型-->
+        <property name="arrs">
+            <array>
+                <value>111</value>
+                <value>222</value>
+                <value>333</value>
+                <value>333</value>
+            </array>
+        </property>
+        <!--list类型-->
+        <property name="list">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+                <value>ccc</value>
+            </list>
+        </property>
+        <!--set类型-->
+        <property name="set">
+            <set>
+                <value>ddd</value>
+                <value>eee</value>
+                <value>fff</value>
+                <value>fff</value>
+            </set>
+        </property>
+        <!--map类型-->
+        <property name="map">
+            <map>
+                <entry key="aaa" value="111"/>
+                <entry key="bbb" value="222"/>
+                <entry key="ccc" value="111"/>
+            </map>
+        </property>
+        <!--properties类型-->
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="pwd">123456</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
 
 
