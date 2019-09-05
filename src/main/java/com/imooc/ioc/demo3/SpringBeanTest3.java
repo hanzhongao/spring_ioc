@@ -36,4 +36,39 @@ public class SpringBeanTest3 {
        applicationContext.close();
 
     }
+
+    @Test
+    /**
+     * BeanPostProsessor的作用
+     */
+    public void test3() {
+        // 创建工厂
+        ApplicationContext applicationContext
+                = new ClassPathXmlApplicationContext("applicationContext.xml") ;
+        // 通过工厂创建类
+        UserDao userDao = (UserDao) applicationContext.getBean("userDao");
+
+        userDao.findAll();
+        userDao.save();
+        userDao.delete();
+        userDao.update();
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

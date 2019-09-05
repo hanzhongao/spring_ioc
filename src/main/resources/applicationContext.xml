@@ -31,8 +31,27 @@
     <!--<bean id="persion" class="com.imooc.ioc.demo3.Persion" scope="prototype"/>-->
 
     <!--Bean的生命周期-->
-    <bean id="man" class="com.imooc.ioc.demo3.Man" init-method="setup" destroy-method="teardown">
-        <property name="name" value="张三"/>
-    </bean>
+    <!--<bean id="man" class="com.imooc.ioc.demo3.Man" init-method="setup" destroy-method="teardown">-->
+        <!--<property name="name" value="张三"/>-->
+    <!--</bean>-->
     <bean class="com.imooc.ioc.demo3.MyBeanPostProcessor"/>
+    <bean id="userDao" class="com.imooc.ioc.demo3.UserDaoImpl"/>
 </beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
